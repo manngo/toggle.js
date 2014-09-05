@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Toggle Sample</title>
+	<script type="text/javascript" src="toggle.js"></script>
+	<script type="text/javascript">
+		window.addEventListener('load',init,false);
+		function init() {
+			toggle('ul#list>li','open',{'only': true});
+			toggle('div#multiple>p','highlighted');
+			toggle('div#callback>p','highlighted',{'callback': doit});
+		}
+		function doit() {
+			alert('You got: '+this.innerHTML);	
+		}
+	</script>
+	<style>
+		body {
+			max-width: 800px;
+			margin: 0 auto;
+			border: thin solid #ccc;
+			font-family: sans-serif;
+			padding: 1em;
+		}
+
+		/*	Accordion Menu
+			================================================ */
+
+			ul#list>li>ul {
+				-display: none;
+			}
+
+			ul#list>li[open] ul {
+				-display: block;
+				border-top: thin solid #666;
+			}
+
+			ul#list>li li {
+				transition: height .5s;
+				height: 0;
+				overflow: hidden;
+			}
+			ul#list>li[open] li {
+				height: 1em;
+				padding: .5em;
+			}
+
+			ul#list, ul#list ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			ul#list {
+				width: 20em;
+				border: thin solid #666;
+			}
+
+			ul#list>li {
+				border: thin solid #666;
+				padding: .5em .75em;
+
+				transition: color 1s, background-color 1s;
+			}
+
+			ul#list>li[open] {
+				color: #f8f8f8;
+				background-color: #666;
+			}
+
+			ul#list ul {
+				qpadding-left: 1em;
+			}
+
+			ul#list>li {
+				font-weight: bold;
+			}
+			ul#list>li>ul {
+				margin: 0;
+			}
+			ul#list>li li {
+				font-weight: normal;
+				color: black;
+				background-color: white;
+			}
+
+		/*	Multiple Selection
+			================================================ */
+			
+			div#multiple>p {
+				border: thin solid #666;
+				padding: 1em;
+			}
+				
+			div#multiple>p[highlighted] {
+				background-color: #ddd;
+				box-shadow: 4px 4px 4px #666;
+			}
+
+		/*	Multiple Selection With Callback
+			================================================ */
+			
+			div#callback>p {
+				border: thin solid #666;
+				padding: 1em;
+			}
+				
+			div#callback>p[highlighted] {
+				background-color: #ddd;
+				box-shadow: 4px 4px 4px #666;
+			}
+
+	</style>
+</head>
+<body>
+	<h1>Toggle Sampler</h1>
+	<h2>Multiple Items</h2>
+	<div id="multiple">
+		<p>One</p>
+		<p>Two</p>
+		<p>Three</p>
+	</div>
+
+	<h2>Accordion Menu</h2>
+	<ul id="list">
+		<li>fruit
+			<ul>
+				<li>apple</li>
+				<li>banana</li>
+				<li>cherry</li>
+				<li>donut</li>
+			</ul>
+		</li>
+		<li>instruments
+			<ul>
+				<li>accordion</li>
+				<li>banjo</li>
+				<li>clarinet</li>
+				<li>dobro</li>
+				<li>electric guitar</li>
+			</ul>
+		</li>
+		<li>animals
+			<ul>
+				<li>aardvark</li>
+				<li>badger</li>
+				<li>caterpillar</li>
+			</ul>
+		</li>
+	</ul>
+
+	<h2>Multiple with Callback</h2>
+	<div id="callback">
+		<p>One</p>
+		<p>Two</p>
+		<p>Three</p>
+	</div>
+</body>
+</html>
