@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Toggle.js by manngo</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Toggle.js</h1>
+        <p>Allows you to toggle one or more HTML elements.</p>
+
+        <p class="view"><a href="https://github.com/manngo/toggle.js">View the Project on GitHub <small>manngo/toggle.js</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/manngo/toggle.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/manngo/toggle.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/manngo/toggle.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="togglejs" class="anchor" href="#togglejs"><span class="octicon octicon-link"></span></a>toggle.js</h1>
+
+<p>Make selected element(s) togglable, if that’s
+a real word.</p>
+
+<p>Allows you to toggle one or more HTML elements.
+This can be useful, for example to generate menus, tabs or accordions.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>In JavaScript, invoke the following:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">toggle</span><span class="p">(</span><span class="nx">selector</span><span class="p">,</span><span class="nx">attribute</span><span class="p">,</span><span class="nx">options</span><span class="p">);</span>
+</pre></div>
+
+<p>In CSS, you can select a toggled element as follows{</p>
+
+<div class="highlight highlight-css"><pre><span class="nt">element</span><span class="o">[</span><span class="nt">attribute</span><span class="o">]</span> <span class="p">{</span>
+    <span class="err">…</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2>
+<a name="parameters" class="anchor" href="#parameters"><span class="octicon octicon-link"></span></a>Parameters</h2>
+
+<dl>
+<dt><strong>element</strong></dt>
+    <dd>HTML Element, such as from <code>document.getLementById()</code>.</dd>
+    <dd>Can be a CSS style selector such as <code>'ul#menu&gt;li'</code>
+</dd>
+    <dt><strong>attribute</strong></dt>
+    <dd>blah blah</dd>
+
+    <dt><strong>options</strong></dt>
+    <dd>An array of options. This is in the form of:</dd>
+    <dd><pre>{
+    only: false,
+    bubbleOK: false,
+    callback: undefined,    
+}</pre></dd>
+</dl><h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<p>The options object is, well, optional. If omitted, the values are as above.</p>
+
+<p>If you want to set any options supply an object with any of the above properties.</p>
+
+<dl>
+<dt>only</dt>
+    <dl>Whether selecting an element will de-select others.</dl>
+<dt>bubbleOK</dt>
+    <dl>Whether nested inner elements can activate the toggle.</dl>
+<dt>callback</dt>
+    <dl>A function which will be called on toggling.</dl>
+</dl>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/manngo">manngo</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
