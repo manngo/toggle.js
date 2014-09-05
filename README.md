@@ -8,6 +8,8 @@ a real word.
 Allows you to toggle one or more HTML elements.
 This can be useful, for example to generate menus, tabs or accordions.
 
+This will be incorporated in a more extensive Widgets collection (TBA), but, because of its usefulness, this simpler version will still be maintained.
+
 Usage
 -----
 
