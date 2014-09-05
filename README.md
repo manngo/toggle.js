@@ -62,3 +62,7 @@ If you want to set any options supply an object with any of the above properties
 	<dl>A function which will be called on toggling.</dl>
 </dl>
 
+Sample
+------
+
+Click [Here](http://htmlpreview.github.com/?https://github.com/manngo/toggle.js/blob/master/sample.html) for the sample …

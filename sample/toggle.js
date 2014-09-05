@@ -13,9 +13,9 @@
 				attribute:	name of attribute to toggle
 				
 				options
-					only: false			whether this de-selects others
-					bubbleOK: false		whether bubbled events acceppted
-					callback: undefined	callback function
+					only: false				whether this de-selects others
+					bubbleOK: false			whether bubbled events acceppted
+					callback: undefined		callback function
 
 	================================================ */
 
