@@ -47,10 +47,9 @@
 				/*jshint validthis:true */
 				if(this.hasAttribute(attribute)) this.removeAttribute(attribute);
 				else this.setAttribute(attribute,true);
-				if(options.callback) options.callback();
+				if(options.callback) options.callback.call(this);
 			}
 
-			
 			function radio(event) {
 				/*jshint validthis:true */
 				event=event || window.event;
@@ -62,7 +61,7 @@
 					current=this;
 					current.setAttribute(attribute,true);
 				}
-				if(options.callback) options.callback();
+				if(options.callback) options.callback.call(this);
 			}
 
 		}
