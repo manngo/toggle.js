@@ -3,16 +3,27 @@
 <head>
 	<meta charset="utf-8">
 	<title>Toggle Sample</title>
-	<script type="text/javascript" src="toggle.js"></script>
+	<script type="text/javascript" src="../toggle.js"></script>
 	<script type="text/javascript">
 		window.addEventListener('load',init,false);
 		function init() {
 			toggle('ul#list>li','open',{'only': true});
 			toggle('div#multiple>p','highlighted');
-			toggle('div#callback>p','highlighted',{'callback': doit});
+			var options={
+				'callbackOn': before,
+				'callback': doit,
+				'callbackOff': after,
+			};
+			toggle('div#callback>p','highlighted',options);
+		}
+		function before() {
+			alert('Hello '+this.innerHTML);
 		}
 		function doit() {
-			alert('You got: '+this.innerHTML);	
+			alert('You got: '+this.innerHTML);
+		}
+		function after() {
+			alert('Goodbye '+this.innerHTML);
 		}
 	</script>
 	<style>
@@ -87,12 +98,12 @@
 
 		/*	Multiple Selection
 			================================================ */
-			
+
 			div#multiple>p {
 				border: thin solid #666;
 				padding: 1em;
 			}
-				
+
 			div#multiple>p[highlighted] {
 				background-color: #ddd;
 				box-shadow: 4px 4px 4px #666;
@@ -100,12 +111,12 @@
 
 		/*	Multiple Selection With Callback
 			================================================ */
-			
+
 			div#callback>p {
 				border: thin solid #666;
 				padding: 1em;
 			}
-				
+
 			div#callback>p[highlighted] {
 				background-color: #ddd;
 				box-shadow: 4px 4px 4px #666;

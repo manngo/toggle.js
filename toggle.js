@@ -3,7 +3,7 @@
 
 /*  toggle.js
 	================================================
-	
+
 	Make selected element(s) togglable, if that’s
 	a real word.
 
@@ -11,11 +11,13 @@
 
 				selector:	Element. Can be a CSS style seleector
 				attribute:	name of attribute to toggle
-				
+
 				options
 					only: false				whether this de-selects others
 					bubbleOK: false			whether bubbled events acceppted
+					callbackOn:	undefined	callback on selecting
 					callback: undefined		callback function
+					callbackOff: undefined	callback on de-selecting
 
 	================================================ */
 
@@ -31,7 +33,7 @@
 			}
 
 			function getElements(selector) {
-				var elements=[],i,nodes,type;
+				var type;
 				//	HTML Element
 					if(selector.nodeType) return [selector];
 
@@ -47,7 +49,10 @@
 				/*jshint validthis:true */
 				if(this.hasAttribute(attribute)) this.removeAttribute(attribute);
 				else this.setAttribute(attribute,true);
+
+				if(this.hasAttribute(attribute) && options.callbackOn) options.callbackOn.call(this);
 				if(options.callback) options.callback.call(this);
+				if(!this.hasAttribute(attribute) && options.callbackOff) options.callbackOff.call(this);
 			}
 
 			function radio(event) {
@@ -61,7 +66,10 @@
 					current=this;
 					current.setAttribute(attribute,true);
 				}
+
+				if(this.hasAttribute(attribute) && options.callbackOn) options.callbackOn.call(this);
 				if(options.callback) options.callback.call(this);
+				if(!this.hasAttribute(attribute) && options.callbackOff) options.callbackOff.call(this);
 			}
 
 		}
