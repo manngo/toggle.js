@@ -9,7 +9,7 @@
 
 	usage:		toggle(selector,attribute,options);
 
-				selector:	Element. Can be a CSS style seleector
+				selector:	Element. Can be a CSS style selector
 				attribute:	name of attribute to toggle
 
 				options
@@ -18,6 +18,24 @@
 					callbackOn:	undefined	callback on selecting
 					callback: undefined		callback function
 					callbackOff: undefined	callback on de-selecting
+	
+	Sample Snippet
+	==============
+	
+	<script type="text/javascript" src="scripts/toggle.js"></script>
+	<script type="text/javascript">
+		window.addEventListener('load',init,false);
+		function init() {
+			var options={
+				"only":			false,
+				"bubbleOK":		false,
+				"callbackOn":	undefined,
+				"callback":		undefined,
+				"callbackOff":	undefined,
+			};
+			toggle('…','…',options);
+		}
+	</script>
 
 	================================================ */
 
