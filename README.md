@@ -1,12 +1,9 @@
 toggle.js
 =========
 
-Make selected element(s) togglable, if that’s
-a real word.
+Make selected element(s) togglable, if that’s a real word.
 
-
-Allows you to toggle one or more HTML elements.
-This can be useful, for example to generate menus, tabs or accordions.
+Allows you to toggle one or more HTML elements. This can be useful, for example to generate menus, tabs or accordions.
 
 This will be incorporated in a more extensive Widgets collection (TBA), but, because of its usefulness, this simpler version will still be maintained.
 
@@ -81,6 +78,8 @@ If you want to set any options supply an object with any of the above properties
 			<dd>Called if item is toggled on or off.</dd>
 			<dt>callbackOff</dt>
 			<dd>Called only if item is toggled off. Called after callback, if any.</dd>
+			<dt>selected</dt>
+			<dd>CSS style selector of element(s) which should be selected already.</dd>
 		</dl>
 	</dd>
 </dl>

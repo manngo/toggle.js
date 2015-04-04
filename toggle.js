@@ -18,10 +18,11 @@
 					callbackOn:	undefined	callback on selecting
 					callback: undefined		callback function
 					callbackOff: undefined	callback on de-selecting
-	
+					selected: undefined		selector of which item(s) to be pre-selected
+
 	Sample Snippet
 	==============
-	
+
 	<script type="text/javascript" src="scripts/toggle.js"></script>
 	<script type="text/javascript">
 		window.addEventListener('load',init,false);
@@ -32,6 +33,7 @@
 				"callbackOn":	undefined,
 				"callback":		undefined,
 				"callbackOff":	undefined,
+				"selected::		undefined,
 			};
 			toggle('…','…',options);
 		}
@@ -48,6 +50,13 @@
 			elements=getElements(selector);
 			for(e=0,length=elements.length; e<length ;e++) {
 				elements[e].onclick = options.only ? radio : checkbox;
+			}
+			if(options.selected) {
+				var selected=document.querySelectorAll(options.selected);
+				for(var i=0;i<selected.length;i++) {
+					selected[i].setAttribute(attribute,true);
+					if(options.only) current=selected[i];
+				}
 			}
 
 			function getElements(selector) {
